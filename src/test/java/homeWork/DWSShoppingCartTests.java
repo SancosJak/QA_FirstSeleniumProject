@@ -27,13 +27,13 @@ public class DWSShoppingCartTests extends TestBaseDWS {
     public void addProductToCartPositiveTest() {
         driver.findElement(By.cssSelector("[href='/build-your-own-expensive-computer-2']")).click();
         driver.findElement(By.cssSelector("#add-to-cart-button-74")).click();
-        pause(1000);
+        pause(100);
         driver.findElement(By.cssSelector(".cart-label")).click();
         int sizeBefore = sizeOfItems();
         addItems();
         int sizeAfter = sizeOfItems();
 
-        Assert.assertEquals(sizeAfter, sizeBefore + 1);
+        Assert.assertEquals(sizeBefore, sizeAfter + 1);
     }
 
     public void addItems() {
