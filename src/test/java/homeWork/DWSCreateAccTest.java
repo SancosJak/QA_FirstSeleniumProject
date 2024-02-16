@@ -8,38 +8,26 @@ import org.testng.annotations.Test;
 public class DWSCreateAccTest extends TestBaseDWS{
     @BeforeMethod
     public void checkElement() {
-        if (!isElementPresent(By.cssSelector("[href='/register']"))){
-            driver.findElement(By.xpath("//button[.='Log in']")).click();
+        if (!isElementPresent()){
+            clickOnLoginButton();
         }
     }
+
     @Test
     public void registerUserTest() {
-        driver.findElement(By.cssSelector("[href='/register']")).click();
+        clickOnRegisterLink();
 
-        driver.findElement(By.cssSelector("[for='gender-male']")).click();
+        User user = new User();
+        user.setGenderChoose("[for='gender-male']");
+        user.setName("UserName");
+        user.setLastname("UserSurname");
+        user.setEmail("userTest@gm.com");
+        user.setPassword("U$er1234");
 
-        driver.findElement(By.name("FirstName")).click();
-        driver.findElement(By.name("FirstName")).clear();
-        driver.findElement(By.name("FirstName")).sendKeys("UserName");
-
-        driver.findElement(By.name("LastName")).click();
-        driver.findElement(By.name("LastName")).clear();
-        driver.findElement(By.name("LastName")).sendKeys("UserSurname");
-
-        driver.findElement(By.name("Email")).click();
-        driver.findElement(By.name("Email")).clear();
-        driver.findElement(By.name("Email")).sendKeys("userTest@gm.com");
-
-        driver.findElement(By.name("Password")).click();
-        driver.findElement(By.name("Password")).clear();
-        driver.findElement(By.name("Password")).sendKeys("U$er1234");
-
-        driver.findElement(By.name("ConfirmPassword")).click();
-        driver.findElement(By.name("ConfirmPassword")).clear();
-        driver.findElement(By.name("ConfirmPassword")).sendKeys("U$er1234");
-
-        driver.findElement(By.cssSelector("#register-button")).click();
+        fillRegistrationForm(user);
+        clickOnRegisterUser();
 
         Assert.assertTrue(isElementPresent(By.cssSelector(".master-wrapper-page:nth-child(4)")));
     }
+
 }
