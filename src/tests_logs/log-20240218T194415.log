@@ -1,0 +1,15 @@
+19:44:16.487 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\sanco\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+19:44:19.690 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Start test addNewContactPositiveTestFromDataProviderWithCSV with data: [[for='gender-male'], Toni, Stark, t7stark@gm.com, UsA12345]
+19:44:22.144 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Stop test
+19:44:22.145 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- ************************************************************************8888
+19:44:22.147 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Start test addNewContactPositiveTestFromDataProviderWithCSV with data: [[for='gender-female'], Natasha, Romanova, nata1rom@gm.com, UsA12345]
+19:44:24.252 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Stop test
+19:44:24.252 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- ************************************************************************8888
+19:44:24.253 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Start test addNewContactPositiveTestFromDataProviderWithCSV with data: [[for='gender-male'], Steve, Rogers, kepa1merica@gm.com, UsA12345]
+19:44:26.545 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Stop test
+19:44:26.545 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- ************************************************************************8888
+19:44:26.546 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Start test addNewContactPositiveTestFromDataProviderWithCSV with data: [[for='gender-female'], Miss, Marvel, marvel1@gm.com, UsA12345]
+19:44:29.711 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Stop test
+19:44:29.711 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- ************************************************************************8888

@@ -1,5 +1,0 @@
-16:44:27.241 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
-  C:\Users\sanco\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
-
-16:44:30.170 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Start test
-16:44:31.904 [main] INFO  com.ait.qa30.homeWork.TestBaseDWS -- Stop test

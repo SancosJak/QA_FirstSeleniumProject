@@ -1,5 +1,7 @@
 package com.ait.qa30.homeWork;
 
+import com.demoshop.fw.BaseHelper;
+import com.demoshop.models.User;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -15,6 +18,7 @@ import org.testng.annotations.BeforeSuite;
 
 import java.lang.reflect.Method;
 import java.time.Duration;
+import java.util.Arrays;
 
 public class TestBaseDWS {
     static WebDriver driver;
@@ -36,14 +40,25 @@ public class TestBaseDWS {
     public static void selectItemClick() {
         driver.findElement(By.cssSelector("[href='/build-your-own-expensive-computer-2']")).click();
     }
+
+    public static void LogOutClickOnButton() {
+        driver.findElement(By.xpath(".//a[@class='ico-logout']")).click();
+    }
+
     @BeforeMethod
-    public void startTest(Method method){
-        logger.info("Start test " + method.getName());
+    public void startTest(Method method, Object[] o){
+        logger.info("Start test " + method.getName() + " with data: " + Arrays.asList(o));
     }
     @AfterMethod
-    public  void stopTest(){
-        logger.info("Stop test");
-        logger.info("************************************************************************8888");
+    public  void stopTest(ITestResult result){
+        BaseHelper baseHelper = new BaseHelper();
+        if (result.isSuccess()){
+            logger.info("PASSED: " + result.getMethod().getMethodName());
+        } else {
+            logger.info("FAILED: " + result.getMethod().getMethodName() + "Screenshot: "
+                    + baseHelper.takeScreenshot());
+        }
+        logger.info("**********************************************");
     }
 
     @BeforeSuite
@@ -113,7 +128,7 @@ public class TestBaseDWS {
     }
 
     public void clickOnLogoutButton() {
-        driver.findElement(By.xpath("//button[.='Log out']")).click();
+        driver.findElement(By.xpath("//button[.='Logout']")).click();
     }
 
     public boolean clickOnLoginLink() {

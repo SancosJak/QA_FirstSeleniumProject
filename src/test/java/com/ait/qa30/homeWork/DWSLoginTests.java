@@ -1,5 +1,6 @@
 package com.ait.qa30.homeWork;
 
+import com.demoshop.utils.UserData;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class DWSLoginTests extends TestBaseDWS{
     public void loginPositiveTest() {
 
         clickOnLogin();
-        fillAllData("userTest@gm.com", "U$er1234");
+        fillAllData(UserData.EMAIL, UserData.PASSWORD);
         LoginUser();
 
         Assert.assertTrue(isIcoElementPresent());
