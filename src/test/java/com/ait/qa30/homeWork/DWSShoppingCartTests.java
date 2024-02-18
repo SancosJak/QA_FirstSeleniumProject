@@ -1,4 +1,4 @@
-package homeWork;
+package com.ait.qa30.homeWork;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

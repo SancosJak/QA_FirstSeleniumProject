@@ -1,4 +1,4 @@
-package homeWork;
+package com.ait.qa30.homeWork;
 
 public class User {
     private  String genderChoose;

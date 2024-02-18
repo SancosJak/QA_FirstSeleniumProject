@@ -1,4 +1,4 @@
-package homeWork;
+package com.ait.qa30.homeWork;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -6,13 +6,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import java.lang.reflect.Method;
 import java.time.Duration;
 
 public class TestBaseDWS {
     static WebDriver driver;
+    Logger logger = LoggerFactory.getLogger(TestBaseDWS.class);
 
     public static void enterData(String email, String password) {
         driver.findElement(By.name("Email")).sendKeys(email);
@@ -30,8 +36,16 @@ public class TestBaseDWS {
     public static void selectItemClick() {
         driver.findElement(By.cssSelector("[href='/build-your-own-expensive-computer-2']")).click();
     }
+    @BeforeMethod
+    public void startTest(Method method){
+        logger.info("Start test " + method.getName());
+    }
+    @AfterMethod
+    public  void stopTest(){
+        logger.info("Stop test");
+        logger.info("************************************************************************8888");
+    }
 
-    //    @BeforeMethod
     @BeforeSuite
     public void setUp() {
         driver = new ChromeDriver();
@@ -40,7 +54,6 @@ public class TestBaseDWS {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-//    @AfterMethod(enabled = false)
     @AfterSuite
     public void tearDown() {
         driver.quit();

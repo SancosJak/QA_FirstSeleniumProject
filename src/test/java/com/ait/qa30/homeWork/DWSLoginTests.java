@@ -1,6 +1,5 @@
-package homeWork;
+package com.ait.qa30.homeWork;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -28,7 +27,6 @@ public class DWSLoginTests extends TestBaseDWS{
         clickOnLogin();
         fillAllData("userTest@gm.com", "U$er1234");
         LoginUser();
-
         Assert.assertTrue(isIcoElementPresent());
     }
 
