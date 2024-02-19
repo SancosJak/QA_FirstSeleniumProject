@@ -9,7 +9,7 @@
                 </methods>
             </class>
             <class name="com.ait.qa30.homeWork.DWSCreateAccTest"/>
-<!--            <class name="com.ait.qa30.homeWork.DWSHomePageTests"/>-->
+            <class name="com.ait.qa30.homeWork.DWSHomePageTests"/>
         </classes>
     </test>
 
