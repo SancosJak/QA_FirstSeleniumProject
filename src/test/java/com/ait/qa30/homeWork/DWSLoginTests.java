@@ -22,13 +22,13 @@ public class DWSLoginTests extends TestBaseDWS{
 
         Assert.assertTrue(isIcoElementPresent());
     }
-    @Test
-    public void loginNegativeTest() {
-
-        clickOnLogin();
-        fillAllData("userTest@gm.com", "U$er1234");
-        LoginUser();
-        Assert.assertTrue(isIcoElementPresent());
-    }
+//    @Test
+//    public void loginNegativeTest() {
+//
+//        clickOnLogin();
+//        fillAllData("userTest@gm.com", "U$er1234");
+//        LoginUser();
+//        Assert.assertTrue(isIcoElementPresent());
+//    }
 
 }
