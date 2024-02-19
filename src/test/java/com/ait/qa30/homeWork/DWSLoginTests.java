@@ -1,6 +1,7 @@
 package com.ait.qa30.homeWork;
 
 import com.demoshop.utils.UserData;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,13 +23,14 @@ public class DWSLoginTests extends TestBaseDWS{
 
         Assert.assertTrue(isIcoElementPresent());
     }
-//    @Test
-//    public void loginNegativeTest() {
-//
-//        clickOnLogin();
-//        fillAllData("userTest@gm.com", "U$er1234");
-//        LoginUser();
-//        Assert.assertTrue(isIcoElementPresent());
-//    }
+    @Test
+    public void loginNegativeTest() {
+
+        clickOnLogin();
+        fillAllData("", "U$er1234");
+        LoginUser();
+        Assert.assertTrue(isElementPresent(By.cssSelector(".validation-summary-errors li")));
+
+    }
 
 }
